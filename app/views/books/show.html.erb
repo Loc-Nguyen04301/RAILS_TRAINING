@@ -9,11 +9,22 @@
   <strong>Number of pages:</strong>
   <%= @book.number_of_pages %>
 </p>
+<h2>Review Form</h2>
+ <%= form_with(model: @book_review, local:true) do |form| %>
+ <div class="field">
+    <%= form.text_area:review %>
+    <%= form.hidden_field :book_id, :value => @book.id %>
+ </div>
 
-<p>
-  <strong>Detail:</strong>
-  <%= @book.detail %>
-</p>
+ <% end %>
+ <h2>Review Form</h2>
+ <%= form_with(model: @book_review, local:true) do |form| %>
+ <div class="field">
+    <%= form.text_area:review %>
+    <%= form.hidden_field :book_id, :value => @book.id %>
+ </div>
+
+ <% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
